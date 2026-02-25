@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/ni-cookie/portfolio-app:latest
+    image: ghcr.io/ni-cookie/nicookie.space:latest
     container_name: fastapi_portfolio
     restart: unless-stopped
     expose:
