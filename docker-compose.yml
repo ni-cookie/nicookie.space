@@ -1,14 +1,12 @@
 services:
   app:
     image: ghcr.io/ni-cookie/nicookie.space:latest
-    container_name: fastapi_portfolio
     restart: unless-stopped
     expose:
       - "8000"
 
   nginx:
     image: nginx:alpine
-    container_name: nginx_portfolio
     restart: unless-stopped
     ports:
       - "80:80"
@@ -25,7 +23,6 @@ services:
     
   node_exporter:
     image: prom/node-exporter:latest
-    container_name: node_exporter
     restart: unless-stopped
     network_mode: host
     pid: host
@@ -36,7 +33,6 @@ services:
 
   prometheus:
     image: prom/prometheus:latest
-    container_name: prometheus
     restart: unless-stopped
     expose:
       - "9090"
@@ -48,7 +44,6 @@ services:
 
   grafana:
     image: grafana/grafana:latest
-    container_name: grafana
     restart: unless-stopped
     expose:
       - "3000"
@@ -59,7 +54,6 @@ services:
   
   portainer:
     image: portainer/portainer-ce:latest
-    container_name: portainer
     restart: unless-stopped
     expose:
       - "9000"
